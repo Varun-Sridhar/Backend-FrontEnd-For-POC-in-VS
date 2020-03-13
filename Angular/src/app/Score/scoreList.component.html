@@ -1,0 +1,80 @@
+﻿<link rel="stylesheet" href="//cdn.webix.com/edge/webix.css">
+<script src="//cdn.webix.com/edge/webix.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+        function webixDisplay()  {
+            var dataset = [
+            { id: 1, sales: 20, year: "02" },
+            { id: 2, sales: 55, year: "03" },
+            { id: 3, sales: 40, year: "04" },
+            { id: 4, sales: 78, year: "05" },
+            { id: 5, sales: 61, year: "06" },
+            { id: 6, sales: 35, year: "07" },
+            { id: 7, sales: 80, year: "08" },
+            { id: 8, sales: 50, year: "09" },
+            { id: 9, sales: 65, year: "10" },
+            { id: 10, sales: 59, year: "11" }
+            ];
+
+            webix.ready(function () {
+                webix.ui({
+                    view: "chart",
+                    width: 600,
+                    height: 250,
+                    type: "line",
+                    value: "#sales#",
+                    item: {
+                        borderColor: "#1293f8",
+                        color: "#ffffff"
+                    },
+                    line: {
+                        color: "#1293f8",
+                        width: 3
+                    },
+                    xAxis: {
+                        template: "'#year#"
+                    },
+                    offset: 0,
+                    yAxis: {
+                        start: 0,
+                        end: 100,
+                        step: 10,
+                        template: function (obj) {
+                            return (obj % 25 ? "" : obj)
+                        }
+                    },
+                    data: dataset
+                });
+            });
+        } 
+    </script>    
+<button onclick="webixDisplay()">Click Me</button>
+<!--<table>
+    <thead>
+        <tr>
+            <th>BeaconId</th>
+            <th>TestType</th>
+            <th>Score</th>
+            <th>Feedback</th>
+            <th>Date</th>
+            <th>HROM</th>
+            <th>Location</th>
+            <th>Result</th>
+            <th>VacancyID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let score of scores;">
+            <td>{{score.BeaconId}}</td>
+            <td>{{score.TestType}}</td>
+            <td>{{score.Score}}</td>
+            <td>{{score.Feedback}}</td>
+            <td>{{score.Date}}</td>
+            <td>{{score.HROM}}</td>
+            <td>{{score.Location}}</td>
+            <td>{{score.Result}}</td>
+            <td>{{score.VacancyID}}</td>
+        </tr>
+    </tbody>
+</table>-->
+    

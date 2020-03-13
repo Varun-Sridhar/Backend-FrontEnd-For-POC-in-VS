@@ -1,0 +1,1193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="aspnet_Applications">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredApplicationName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="aspnet_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="PasswordFormat" Type="int" Nullable="false" />
+    <Property Name="PasswordSalt" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+    <Property Name="IsApproved" Type="bit" Nullable="false" />
+    <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+    <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="Comment" Type="ntext" />
+  </EntityType>
+  <EntityType Name="aspnet_Paths">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Path" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredPath" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationAllUsers">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PageSettings" Type="image" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationPerUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PathId" Type="uniqueidentifier" />
+    <Property Name="UserId" Type="uniqueidentifier" />
+    <Property Name="PageSettings" Type="image" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Profile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PropertyNames" Type="ntext" Nullable="false" />
+    <Property Name="PropertyValuesString" Type="ntext" Nullable="false" />
+    <Property Name="PropertyValuesBinary" Type="image" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredRoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="aspnet_SchemaVersions">
+    <Key>
+      <PropertyRef Name="Feature" />
+      <PropertyRef Name="CompatibleSchemaVersion" />
+    </Key>
+    <Property Name="Feature" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="CompatibleSchemaVersion" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="IsCurrentVersion" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredUserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+    <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+    <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+    <Property Name="BeaconID" Type="int" />
+  </EntityType>
+  <EntityType Name="aspnet_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_WebEvent_Events">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="EventTimeUtc" Type="datetime" Nullable="false" />
+    <Property Name="EventTime" Type="datetime" Nullable="false" />
+    <Property Name="EventType" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="EventSequence" Type="decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="EventOccurrence" Type="decimal" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="EventCode" Type="int" Nullable="false" />
+    <Property Name="EventDetailCode" Type="int" Nullable="false" />
+    <Property Name="Message" Type="nvarchar" MaxLength="1024" />
+    <Property Name="ApplicationPath" Type="nvarchar" MaxLength="256" />
+    <Property Name="ApplicationVirtualPath" Type="nvarchar" MaxLength="256" />
+    <Property Name="MachineName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="RequestUrl" Type="nvarchar" MaxLength="1024" />
+    <Property Name="ExceptionType" Type="nvarchar" MaxLength="256" />
+    <Property Name="Details" Type="ntext" />
+  </EntityType>
+  <EntityType Name="BeaconAppStatus">
+    <Key>
+      <PropertyRef Name="AppStatusID" />
+    </Key>
+    <Property Name="AppStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AppStatus" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BeaconHR-Dev.dbo.BeaconCandidateStatusList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BeaconCandidateStatusList">
+    <Key>
+      <PropertyRef Name="StausID" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="StausID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BeaconColleges">
+    <Key>
+      <PropertyRef Name="CollegeID" />
+    </Key>
+    <Property Name="CountryOfStudyID" Type="int" />
+    <Property Name="CollegeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="College" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="BeaconCountry">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Country" Type="varchar" MaxLength="200" />
+    <Property Name="isActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="BeaconCountryOfStudy">
+    <Key>
+      <PropertyRef Name="CountryOfStudyID" />
+    </Key>
+    <Property Name="CountryOfStudyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Country" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="BeaconDegrees">
+    <Key>
+      <PropertyRef Name="DegreeID" />
+    </Key>
+    <Property Name="DegreeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Degree" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="BeaconDepartment">
+    <Key>
+      <PropertyRef Name="DeptID" />
+    </Key>
+    <Property Name="DeptID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeptName" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="BeaconGPDepartment">
+    <Key>
+      <PropertyRef Name="DepId" />
+    </Key>
+    <Property Name="DepId" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="DepDescription" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="BeaconGPDivision">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="division" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="BeaconGPEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="BeaconId" Type="int" />
+    <Property Name="DirectManagerEmployeeId" Type="int" />
+    <Property Name="MatrixManagerEmployeeId" Type="int" />
+    <Property Name="HireDate" Type="datetime" Nullable="false" />
+    <Property Name="Division" Type="int" />
+    <Property Name="Department" Type="nvarchar" MaxLength="5" />
+    <Property Name="JobTitle" Type="int" />
+    <Property Name="JobTitle2" Type="nvarchar" MaxLength="250" />
+    <Property Name="Location" Type="int" Nullable="false" />
+    <Property Name="Sublocation" Type="nvarchar" MaxLength="250" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="ConfirmationDate" Type="datetime" />
+    <Property Name="PayrollId" Type="int" Nullable="false" />
+    <Property Name="JobtitleDescription" Type="nvarchar(max)" />
+    <Property Name="TradingSystem" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="BeaconGPEmployeeChildrenDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="ChildName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="ChildDOB" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BeaconGPEmployeeEducationDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="Degree" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="School" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="YearOfPassing" Type="nvarchar" MaxLength="255" />
+    <Property Name="CgpaORPercent" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="standard" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Specialization" Type="nvarchar(max)" />
+    <Property Name="CountryOfStudy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BeaconGPEmployeePersonalDetails">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="char" MaxLength="1" />
+    <Property Name="BloodGroup" Type="nvarchar" MaxLength="50" />
+    <Property Name="PanNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="PassportNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateofBirth" Type="datetime" />
+    <Property Name="AnniversaryDate" Type="datetime" />
+    <Property Name="NoOfChildren" Type="int" />
+    <Property Name="PersonalIdentificationNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaritalStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="FatherName" Type="nvarchar" MaxLength="250" />
+    <Property Name="MotherName" Type="nvarchar" MaxLength="250" />
+    <Property Name="SpouseName" Type="nvarchar" MaxLength="250" />
+    <Property Name="PresentAddress" Type="nvarchar(max)" />
+    <Property Name="PermanentAddress" Type="nvarchar(max)" />
+    <Property Name="PersonalPhone1" Type="nvarchar" MaxLength="50" />
+    <Property Name="PersonalPhone2" Type="nvarchar" MaxLength="50" />
+    <Property Name="OfficePhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="IPExtension" Type="nvarchar" MaxLength="50" />
+    <Property Name="PersonalEmail" Type="nvarchar" MaxLength="250" />
+    <Property Name="OfficeEmail" Type="nvarchar" MaxLength="250" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="HomeTown" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="int" />
+    <Property Name="PreviousExperience" Type="char" MaxLength="10" />
+    <Property Name="JobHops" Type="int" />
+    <Property Name="PreferedLocation" Type="nvarchar(max)" />
+    <Property Name="EmergencyContactName" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmergencyContactNumber" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="PFNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="UANNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ICICIAccountNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmployeeConversionDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="BeaconGPEmployeeProduct">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="PrimaryOrSecondary" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdditionalProductId" Type="int" />
+  </EntityType>
+  <EntityType Name="BeaconGPEmployeeWorkExperience">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="JobTitle" Type="varchar" MaxLength="100" />
+    <Property Name="IsCurrentPosition" Type="bit" />
+    <Property Name="DateFrom" Type="date" />
+    <Property Name="DateTo" Type="date" />
+    <Property Name="comments" Type="varchar(max)" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BeaconGPExitInterview">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="Question" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Answer" Type="nvarchar(max)" />
+    <Property Name="SequenceNo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BeaconGPExitQuestions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Question" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="isEnabled" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BeaconHR-Dev.dbo.BeaconGPHRLocationMapping' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BeaconGPHRLocationMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Location" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HRName" Type="varchar" MaxLength="255" />
+    <Property Name="Location" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BeaconGPITM">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="ITM" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PrimaryOrSecondary" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ISV" Type="nvarchar(max)" />
+    <Property Name="Client" Type="nvarchar(max)" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BeaconGPJobTitle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobTitle" Type="nvarchar" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="BeaconGPManager">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="BeaconGPProduct">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="255" />
+    <Property Name="ProductAssetCalss" Type="varchar" MaxLength="200" />
+    <Property Name="Exchange" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="BeaconGPReasonForLeaving">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BeaconGPResignationType">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BeaconGPStatus">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="BeaconGPTerminationDetails">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="DateOfResignation" Type="datetime" />
+    <Property Name="ReasonForLeavingId" Type="int" />
+    <Property Name="LastDayWorked" Type="datetime" />
+    <Property Name="ResignationType" Type="int" />
+    <Property Name="StatusID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BeaconHR-Dev.dbo.BeaconHROM' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BeaconHROM">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="HROM" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HROM" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BeaconLocation">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="CountryID" Type="int" />
+    <Property Name="LocationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Location" Type="varchar" MaxLength="200" />
+    <Property Name="isActive" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BeaconHR-Dev.dbo.BeaconOfferLetterStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BeaconOfferLetterStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BeaconPermissions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PermissionsId" Type="int" Nullable="false" />
+    <Property Name="Permissions_Desc" Type="nvarchar(max)" />
+    <Property Name="Permission_Display" Type="nvarchar(max)" />
+    <Property Name="RoleId" Type="int" />
+    <Property Name="isMasterTable" Type="bit" />
+    <Property Name="MasterTableId" Type="int" />
+  </EntityType>
+  <EntityType Name="BeaconScore">
+    <Key>
+      <PropertyRef Name="BeaconId" />
+      <PropertyRef Name="TestType" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="VacancyID" />
+    </Key>
+    <Property Name="BeaconId" Type="int" Nullable="false" />
+    <Property Name="TestType" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Score" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="Feedback" Type="nvarchar" MaxLength="255" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="HROM" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Location" Type="nvarchar" MaxLength="255" />
+    <Property Name="Result" Type="nvarchar" MaxLength="255" />
+    <Property Name="VacancyID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BeaconHR-Dev.dbo.BeaconSourceOfRecruitment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BeaconSourceOfRecruitment">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="SourceOfRecruitment" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SourceOfRecruitment" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BeaconUserDetails">
+    <Key>
+      <PropertyRef Name="BeaconId" />
+    </Key>
+    <Property Name="BeaconId" Type="int" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="varchar(max)" Nullable="false" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="200" />
+    <Property Name="LastName" Type="varchar(max)" Nullable="false" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateOfBirth" Type="date" Nullable="false" />
+    <Property Name="Gender" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="PermanentAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HomeTown" Type="varchar" MaxLength="150" />
+    <Property Name="PostalCode" Type="varchar" MaxLength="50" />
+    <Property Name="Country" Type="int" Nullable="false" />
+    <Property Name="PreviousExperience" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="JobHops" Type="int" Nullable="false" />
+    <Property Name="SpecialTags" Type="varchar(max)" />
+    <Property Name="PreferedLocation" Type="nvarchar" MaxLength="100" />
+    <Property Name="QueryStringFlag" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="BeaconUserEducationDetails">
+    <Key>
+      <PropertyRef Name="BeaconId" />
+      <PropertyRef Name="Standard" />
+    </Key>
+    <Property Name="BeaconId" Type="int" Nullable="false" />
+    <Property Name="Standard" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Percentage" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="YearOfCompletion" Type="nvarchar" MaxLength="255" />
+    <Property Name="Comments" Type="nvarchar(max)" />
+    <Property Name="Specialization" Type="nvarchar" MaxLength="100" />
+    <Property Name="College" Type="nvarchar" MaxLength="255" />
+    <Property Name="CountryOfStudy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Degree" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BeaconUserStatus">
+    <Key>
+      <PropertyRef Name="BeaconId" />
+    </Key>
+    <Property Name="BeaconId" Type="int" Nullable="false" />
+    <Property Name="CandidateStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OfferLetterStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="AllocatedLocation" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExpectedDateOfJoining" Type="datetime" />
+    <Property Name="ReferredBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="SourceOfRecruitment" Type="nvarchar" MaxLength="100" />
+    <Property Name="LastUpdatedDate" Type="datetime" />
+    <Property Name="DateOfRegistration" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BeaconHR-Dev.dbo.BeaconUserVacancyAdditionalInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BeaconUserVacancyAdditionalInfo">
+    <Key>
+      <PropertyRef Name="BeaconID" />
+      <PropertyRef Name="VacancyID" />
+    </Key>
+    <Property Name="BeaconID" Type="int" Nullable="false" />
+    <Property Name="VacancyID" Type="int" Nullable="false" />
+    <Property Name="SelectionQ1" Type="varchar(max)" />
+    <Property Name="AnswerSelectionQ1" Type="varchar(max)" />
+    <Property Name="SelectionQ2" Type="varchar(max)" />
+    <Property Name="AnswerSelectionQ2" Type="varchar(max)" />
+    <Property Name="SelectionQ3" Type="varchar(max)" />
+    <Property Name="AnswerSelectionQ3" Type="varchar(max)" />
+    <Property Name="KillerQ1" Type="varchar(max)" />
+    <Property Name="AnswerKillerQ1" Type="varchar(max)" />
+    <Property Name="KillerQ2" Type="varchar(max)" />
+    <Property Name="AnswerKillerQ2" Type="varchar(max)" />
+    <Property Name="KillerQ3" Type="varchar(max)" />
+    <Property Name="AnswerKillerQ3" Type="varchar(max)" />
+    <Property Name="LastUpdated" Type="datetime" />
+    <Property Name="AppStatusId" Type="int" />
+    <Property Name="CountryEligibility" Type="bit" />
+    <Property Name="CriminalCharge" Type="bit" />
+    <Property Name="Source" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="BeaconUserWorkExperience">
+    <Key>
+      <PropertyRef Name="BeaconId" />
+      <PropertyRef Name="CompanyName" />
+    </Key>
+    <Property Name="BeaconId" Type="int" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="JobTitle" Type="varchar" MaxLength="100" />
+    <Property Name="IsCurrentPosition" Type="bit" />
+    <Property Name="DateFrom" Type="date" />
+    <Property Name="DateTo" Type="date" />
+    <Property Name="comments" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BeaconHR-Dev.dbo.BeaconVacancy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BeaconVacancy">
+    <Key>
+      <PropertyRef Name="VacancyID" />
+    </Key>
+    <Property Name="VacancyID" Type="int" Nullable="false" />
+    <Property Name="OpeningDate" Type="datetime" />
+    <Property Name="ClosingDate" Type="datetime" />
+    <Property Name="VacancyStatus" Type="nvarchar(max)" />
+    <Property Name="VacancyTitle" Type="varchar" MaxLength="200" />
+    <Property Name="VacancyDescription" Type="nvarchar(max)" />
+    <Property Name="Salary" Type="varchar" MaxLength="500" />
+    <Property Name="CountryID" Type="int" />
+    <Property Name="VacancyRole" Type="varchar" MaxLength="100" />
+    <Property Name="DeptID" Type="int" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="2000" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BeaconHR-Dev.dbo.BeaconVacancyInfoSource' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BeaconVacancyInfoSource">
+    <Key>
+      <PropertyRef Name="SourceID" />
+    </Key>
+    <Property Name="SourceID" Type="int" Nullable="false" />
+    <Property Name="Source" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BeaconHR-Dev.dbo.CompleteResultSet' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CompleteResultSet">
+    <Key>
+      <PropertyRef Name="TestId" />
+    </Key>
+    <Property Name="TestId" Type="int" Nullable="false" />
+    <Property Name="TestAuthor" Type="varchar" MaxLength="255" />
+    <Property Name="QTIKey" Type="varchar" MaxLength="255" />
+    <Property Name="NumOfAttempt" Type="varchar" MaxLength="255" />
+    <Property Name="CompletionStatus" Type="varchar" MaxLength="255" />
+    <Property Name="Score" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Response" Type="varchar" MaxLength="255" />
+    <Property Name="Duration" Type="varchar" MaxLength="255" />
+    <Property Name="TestLabel" Type="varchar" MaxLength="255" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="OrderId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BeaconHR-Dev.dbo.CompleteResultSetArchive' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CompleteResultSetArchive">
+    <Key>
+      <PropertyRef Name="TestId" />
+    </Key>
+    <Property Name="TestId" Type="int" Nullable="false" />
+    <Property Name="TestAuthor" Type="varchar" MaxLength="255" />
+    <Property Name="QTIKey" Type="varchar" MaxLength="255" />
+    <Property Name="NumOfAttempt" Type="varchar" MaxLength="255" />
+    <Property Name="CompletionStatus" Type="varchar" MaxLength="255" />
+    <Property Name="Score" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Response" Type="varchar" MaxLength="255" />
+    <Property Name="Duration" Type="varchar" MaxLength="255" />
+    <Property Name="TestLabel" Type="varchar" MaxLength="255" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="OrderId" Type="int" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Roles_Desc" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Roles_Department_Mapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleId" Type="int" />
+    <Property Name="DepartmentID" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Roles_Locations_Mapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleId" Type="int" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="SubLocation" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Roles_Permissions_Mapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleId" Type="int" />
+    <Property Name="PermissionsId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BeaconHR-Dev.dbo.TAOMasterData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TAOMasterData">
+    <Key>
+      <PropertyRef Name="Label" />
+      <PropertyRef Name="Score" />
+      <PropertyRef Name="LowLevel" />
+      <PropertyRef Name="HighLevel" />
+    </Key>
+    <Property Name="Label" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Score" Type="decimal" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="LowLevel" Type="decimal" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="HighLevel" Type="decimal" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="TimeLimits" Type="decimal" Precision="5" Scale="0" />
+  </EntityType>
+  <EntityType Name="UserRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeId" Type="int" />
+    <Property Name="RoleId" Type="int" />
+  </EntityType>
+  <Association Name="FK__aspnet_Me__Appli__21B6055D">
+    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="Self.aspnet_Membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__UserI__22AA2996">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="Self.aspnet_Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pa__Appli__5AEE82B9">
+    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Paths" Type="Self.aspnet_Paths" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Paths">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__628FA481">
+    <End Role="aspnet_Paths" Type="Self.aspnet_Paths" Multiplicity="1" />
+    <End Role="aspnet_PersonalizationAllUsers" Type="Self.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationAllUsers">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__68487DD7">
+    <End Role="aspnet_Paths" Type="Self.aspnet_Paths" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="Self.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__UserI__693CA210">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="Self.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pr__UserI__38996AB5">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Profile" Type="Self.aspnet_Profile" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Profile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Ro__Appli__440B1D61">
+    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Roles" Type="Self.aspnet_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__Appli__0DAF0CB0">
+    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__RoleI__4AB81AF0">
+    <End Role="aspnet_Roles" Type="Self.aspnet_Roles" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="Self.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__UserI__49C3F6B7">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="Self.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BeaconCol__Count__2CF2ADDF">
+    <End Role="BeaconCountryOfStudy" Type="Self.BeaconCountryOfStudy" Multiplicity="0..1" />
+    <End Role="BeaconColleges" Type="Self.BeaconColleges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BeaconCountryOfStudy">
+        <PropertyRef Name="CountryOfStudyID" />
+      </Principal>
+      <Dependent Role="BeaconColleges">
+        <PropertyRef Name="CountryOfStudyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BeaconGPEmployee_BeaconGPDepartment">
+    <End Role="BeaconGPDepartment" Type="Self.BeaconGPDepartment" Multiplicity="0..1" />
+    <End Role="BeaconGPEmployee" Type="Self.BeaconGPEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BeaconGPDepartment">
+        <PropertyRef Name="DepId" />
+      </Principal>
+      <Dependent Role="BeaconGPEmployee">
+        <PropertyRef Name="Department" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BeaconGPEmployeeEducationDetails_BeaconGPEmployee">
+    <End Role="BeaconGPEmployee" Type="Self.BeaconGPEmployee" Multiplicity="1" />
+    <End Role="BeaconGPEmployeeEducationDetails" Type="Self.BeaconGPEmployeeEducationDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BeaconGPEmployee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="BeaconGPEmployeeEducationDetails">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BeaconGPEmployeeWorkExperience_BeaconGPEmployee">
+    <End Role="BeaconGPEmployee" Type="Self.BeaconGPEmployee" Multiplicity="1" />
+    <End Role="BeaconGPEmployeeWorkExperience" Type="Self.BeaconGPEmployeeWorkExperience" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BeaconGPEmployee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="BeaconGPEmployeeWorkExperience">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BeaconGPITM_BeaconGPEmployeePersonalDetails">
+    <End Role="BeaconGPEmployeePersonalDetails" Type="Self.BeaconGPEmployeePersonalDetails" Multiplicity="1" />
+    <End Role="BeaconGPITM" Type="Self.BeaconGPITM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BeaconGPEmployeePersonalDetails">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="BeaconGPITM">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmpID_BeaconGPEmployeeProduct_BeaconGPEmployee">
+    <End Role="BeaconGPEmployeePersonalDetails" Type="Self.BeaconGPEmployeePersonalDetails" Multiplicity="1" />
+    <End Role="BeaconGPEmployeeProduct" Type="Self.BeaconGPEmployeeProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BeaconGPEmployeePersonalDetails">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="BeaconGPEmployeeProduct">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmpID_BeaconGPManager_BeaconGPEmployeePersonalDetails">
+    <End Role="BeaconGPEmployeePersonalDetails" Type="Self.BeaconGPEmployeePersonalDetails" Multiplicity="1" />
+    <End Role="BeaconGPManager" Type="Self.BeaconGPManager" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="BeaconGPEmployeePersonalDetails">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="BeaconGPManager">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoles_UserRoles">
+    <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="1" />
+    <End Role="UserRoles1" Type="Self.UserRoles" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UserRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRoles1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk1">
+    <End Role="BeaconUserDetails" Type="Self.BeaconUserDetails" Multiplicity="1" />
+    <End Role="BeaconScore" Type="Self.BeaconScore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BeaconUserDetails">
+        <PropertyRef Name="BeaconId" />
+      </Principal>
+      <Dependent Role="BeaconScore">
+        <PropertyRef Name="BeaconId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKLeavingReason">
+    <End Role="BeaconGPReasonForLeaving" Type="Self.BeaconGPReasonForLeaving" Multiplicity="0..1" />
+    <End Role="BeaconGPTerminationDetails" Type="Self.BeaconGPTerminationDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BeaconGPReasonForLeaving">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BeaconGPTerminationDetails">
+        <PropertyRef Name="ReasonForLeavingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="aspnet_Applications" EntityType="Self.aspnet_Applications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Membership" EntityType="Self.aspnet_Membership" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Paths" EntityType="Self.aspnet_Paths" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_PersonalizationAllUsers" EntityType="Self.aspnet_PersonalizationAllUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_PersonalizationPerUser" EntityType="Self.aspnet_PersonalizationPerUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Profile" EntityType="Self.aspnet_Profile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Roles" EntityType="Self.aspnet_Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_SchemaVersions" EntityType="Self.aspnet_SchemaVersions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Users" EntityType="Self.aspnet_Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_UsersInRoles" EntityType="Self.aspnet_UsersInRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_WebEvent_Events" EntityType="Self.aspnet_WebEvent_Events" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconAppStatus" EntityType="Self.BeaconAppStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconColleges" EntityType="Self.BeaconColleges" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconCountry" EntityType="Self.BeaconCountry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconCountryOfStudy" EntityType="Self.BeaconCountryOfStudy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconDegrees" EntityType="Self.BeaconDegrees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconDepartment" EntityType="Self.BeaconDepartment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconGPDepartment" EntityType="Self.BeaconGPDepartment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconGPDivision" EntityType="Self.BeaconGPDivision" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconGPEmployee" EntityType="Self.BeaconGPEmployee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconGPEmployeeChildrenDetails" EntityType="Self.BeaconGPEmployeeChildrenDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconGPEmployeeEducationDetails" EntityType="Self.BeaconGPEmployeeEducationDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconGPEmployeePersonalDetails" EntityType="Self.BeaconGPEmployeePersonalDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconGPEmployeeProduct" EntityType="Self.BeaconGPEmployeeProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconGPEmployeeWorkExperience" EntityType="Self.BeaconGPEmployeeWorkExperience" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconGPExitInterview" EntityType="Self.BeaconGPExitInterview" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconGPExitQuestions" EntityType="Self.BeaconGPExitQuestions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconGPITM" EntityType="Self.BeaconGPITM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconGPJobTitle" EntityType="Self.BeaconGPJobTitle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconGPManager" EntityType="Self.BeaconGPManager" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconGPProduct" EntityType="Self.BeaconGPProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconGPReasonForLeaving" EntityType="Self.BeaconGPReasonForLeaving" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconGPResignationType" EntityType="Self.BeaconGPResignationType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconGPStatus" EntityType="Self.BeaconGPStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconGPTerminationDetails" EntityType="Self.BeaconGPTerminationDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconLocation" EntityType="Self.BeaconLocation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconPermissions" EntityType="Self.BeaconPermissions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconScore" EntityType="Self.BeaconScore" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconUserDetails" EntityType="Self.BeaconUserDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconUserEducationDetails" EntityType="Self.BeaconUserEducationDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconUserStatus" EntityType="Self.BeaconUserStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconUserWorkExperience" EntityType="Self.BeaconUserWorkExperience" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles_Department_Mapping" EntityType="Self.Roles_Department_Mapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles_Locations_Mapping" EntityType="Self.Roles_Locations_Mapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles_Permissions_Mapping" EntityType="Self.Roles_Permissions_Mapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeaconCandidateStatusList" EntityType="Self.BeaconCandidateStatusList" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [BeaconCandidateStatusList].[StausID] AS [StausID], 
+    [BeaconCandidateStatusList].[Status] AS [Status]
+    FROM [dbo].[BeaconCandidateStatusList] AS [BeaconCandidateStatusList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="BeaconGPHRLocationMapping" EntityType="Self.BeaconGPHRLocationMapping" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [BeaconGPHRLocationMapping].[Id] AS [Id], 
+    [BeaconGPHRLocationMapping].[HRName] AS [HRName], 
+    [BeaconGPHRLocationMapping].[Location] AS [Location]
+    FROM [dbo].[BeaconGPHRLocationMapping] AS [BeaconGPHRLocationMapping]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="BeaconHROM" EntityType="Self.BeaconHROM" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [BeaconHROM].[ID] AS [ID], 
+    [BeaconHROM].[HROM] AS [HROM]
+    FROM [dbo].[BeaconHROM] AS [BeaconHROM]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="BeaconOfferLetterStatus" EntityType="Self.BeaconOfferLetterStatus" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [BeaconOfferLetterStatus].[Id] AS [Id], 
+    [BeaconOfferLetterStatus].[Status] AS [Status]
+    FROM [dbo].[BeaconOfferLetterStatus] AS [BeaconOfferLetterStatus]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="BeaconSourceOfRecruitment" EntityType="Self.BeaconSourceOfRecruitment" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [BeaconSourceOfRecruitment].[Id] AS [Id], 
+    [BeaconSourceOfRecruitment].[SourceOfRecruitment] AS [SourceOfRecruitment]
+    FROM [dbo].[BeaconSourceOfRecruitment] AS [BeaconSourceOfRecruitment]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="BeaconUserVacancyAdditionalInfo" EntityType="Self.BeaconUserVacancyAdditionalInfo" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [BeaconUserVacancyAdditionalInfo].[BeaconID] AS [BeaconID], 
+    [BeaconUserVacancyAdditionalInfo].[VacancyID] AS [VacancyID], 
+    [BeaconUserVacancyAdditionalInfo].[SelectionQ1] AS [SelectionQ1], 
+    [BeaconUserVacancyAdditionalInfo].[AnswerSelectionQ1] AS [AnswerSelectionQ1], 
+    [BeaconUserVacancyAdditionalInfo].[SelectionQ2] AS [SelectionQ2], 
+    [BeaconUserVacancyAdditionalInfo].[AnswerSelectionQ2] AS [AnswerSelectionQ2], 
+    [BeaconUserVacancyAdditionalInfo].[SelectionQ3] AS [SelectionQ3], 
+    [BeaconUserVacancyAdditionalInfo].[AnswerSelectionQ3] AS [AnswerSelectionQ3], 
+    [BeaconUserVacancyAdditionalInfo].[KillerQ1] AS [KillerQ1], 
+    [BeaconUserVacancyAdditionalInfo].[AnswerKillerQ1] AS [AnswerKillerQ1], 
+    [BeaconUserVacancyAdditionalInfo].[KillerQ2] AS [KillerQ2], 
+    [BeaconUserVacancyAdditionalInfo].[AnswerKillerQ2] AS [AnswerKillerQ2], 
+    [BeaconUserVacancyAdditionalInfo].[KillerQ3] AS [KillerQ3], 
+    [BeaconUserVacancyAdditionalInfo].[AnswerKillerQ3] AS [AnswerKillerQ3], 
+    [BeaconUserVacancyAdditionalInfo].[LastUpdated] AS [LastUpdated], 
+    [BeaconUserVacancyAdditionalInfo].[AppStatusId] AS [AppStatusId], 
+    [BeaconUserVacancyAdditionalInfo].[CountryEligibility] AS [CountryEligibility], 
+    [BeaconUserVacancyAdditionalInfo].[CriminalCharge] AS [CriminalCharge], 
+    [BeaconUserVacancyAdditionalInfo].[Source] AS [Source]
+    FROM [dbo].[BeaconUserVacancyAdditionalInfo] AS [BeaconUserVacancyAdditionalInfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="BeaconVacancy" EntityType="Self.BeaconVacancy" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [BeaconVacancy].[VacancyID] AS [VacancyID], 
+    [BeaconVacancy].[OpeningDate] AS [OpeningDate], 
+    [BeaconVacancy].[ClosingDate] AS [ClosingDate], 
+    [BeaconVacancy].[VacancyStatus] AS [VacancyStatus], 
+    [BeaconVacancy].[VacancyTitle] AS [VacancyTitle], 
+    [BeaconVacancy].[VacancyDescription] AS [VacancyDescription], 
+    [BeaconVacancy].[Salary] AS [Salary], 
+    [BeaconVacancy].[CountryID] AS [CountryID], 
+    [BeaconVacancy].[VacancyRole] AS [VacancyRole], 
+    [BeaconVacancy].[DeptID] AS [DeptID], 
+    [BeaconVacancy].[Notes] AS [Notes], 
+    [BeaconVacancy].[IsActive] AS [IsActive]
+    FROM [dbo].[BeaconVacancy] AS [BeaconVacancy]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="BeaconVacancyInfoSource" EntityType="Self.BeaconVacancyInfoSource" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [BeaconVacancyInfoSource].[SourceID] AS [SourceID], 
+    [BeaconVacancyInfoSource].[Source] AS [Source]
+    FROM [dbo].[BeaconVacancyInfoSource] AS [BeaconVacancyInfoSource]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CompleteResultSet" EntityType="Self.CompleteResultSet" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CompleteResultSet].[TestId] AS [TestId], 
+    [CompleteResultSet].[TestAuthor] AS [TestAuthor], 
+    [CompleteResultSet].[QTIKey] AS [QTIKey], 
+    [CompleteResultSet].[NumOfAttempt] AS [NumOfAttempt], 
+    [CompleteResultSet].[CompletionStatus] AS [CompletionStatus], 
+    [CompleteResultSet].[Score] AS [Score], 
+    [CompleteResultSet].[Response] AS [Response], 
+    [CompleteResultSet].[Duration] AS [Duration], 
+    [CompleteResultSet].[TestLabel] AS [TestLabel], 
+    [CompleteResultSet].[StartTime] AS [StartTime], 
+    [CompleteResultSet].[EndTime] AS [EndTime], 
+    [CompleteResultSet].[OrderId] AS [OrderId]
+    FROM [dbo].[CompleteResultSet] AS [CompleteResultSet]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CompleteResultSetArchive" EntityType="Self.CompleteResultSetArchive" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CompleteResultSetArchive].[TestId] AS [TestId], 
+    [CompleteResultSetArchive].[TestAuthor] AS [TestAuthor], 
+    [CompleteResultSetArchive].[QTIKey] AS [QTIKey], 
+    [CompleteResultSetArchive].[NumOfAttempt] AS [NumOfAttempt], 
+    [CompleteResultSetArchive].[CompletionStatus] AS [CompletionStatus], 
+    [CompleteResultSetArchive].[Score] AS [Score], 
+    [CompleteResultSetArchive].[Response] AS [Response], 
+    [CompleteResultSetArchive].[Duration] AS [Duration], 
+    [CompleteResultSetArchive].[TestLabel] AS [TestLabel], 
+    [CompleteResultSetArchive].[StartTime] AS [StartTime], 
+    [CompleteResultSetArchive].[EndTime] AS [EndTime], 
+    [CompleteResultSetArchive].[OrderId] AS [OrderId]
+    FROM [dbo].[CompleteResultSetArchive] AS [CompleteResultSetArchive]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TAOMasterData" EntityType="Self.TAOMasterData" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TAOMasterData].[Label] AS [Label], 
+    [TAOMasterData].[Score] AS [Score], 
+    [TAOMasterData].[LowLevel] AS [LowLevel], 
+    [TAOMasterData].[HighLevel] AS [HighLevel], 
+    [TAOMasterData].[TimeLimits] AS [TimeLimits]
+    FROM [dbo].[TAOMasterData] AS [TAOMasterData]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__aspnet_Me__Appli__21B6055D" Association="Self.FK__aspnet_Me__Appli__21B6055D">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__UserI__22AA2996" Association="Self.FK__aspnet_Me__UserI__22AA2996">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pa__Appli__5AEE82B9" Association="Self.FK__aspnet_Pa__Appli__5AEE82B9">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__628FA481" Association="Self.FK__aspnet_Pe__PathI__628FA481">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__68487DD7" Association="Self.FK__aspnet_Pe__PathI__68487DD7">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__UserI__693CA210" Association="Self.FK__aspnet_Pe__UserI__693CA210">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pr__UserI__38996AB5" Association="Self.FK__aspnet_Pr__UserI__38996AB5">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Ro__Appli__440B1D61" Association="Self.FK__aspnet_Ro__Appli__440B1D61">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__Appli__0DAF0CB0" Association="Self.FK__aspnet_Us__Appli__0DAF0CB0">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__RoleI__4AB81AF0" Association="Self.FK__aspnet_Us__RoleI__4AB81AF0">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__UserI__49C3F6B7" Association="Self.FK__aspnet_Us__UserI__49C3F6B7">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BeaconCol__Count__2CF2ADDF" Association="Self.FK__BeaconCol__Count__2CF2ADDF">
+      <End Role="BeaconCountryOfStudy" EntitySet="BeaconCountryOfStudy" />
+      <End Role="BeaconColleges" EntitySet="BeaconColleges" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BeaconGPEmployee_BeaconGPDepartment" Association="Self.FK_BeaconGPEmployee_BeaconGPDepartment">
+      <End Role="BeaconGPDepartment" EntitySet="BeaconGPDepartment" />
+      <End Role="BeaconGPEmployee" EntitySet="BeaconGPEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BeaconGPEmployeeEducationDetails_BeaconGPEmployee" Association="Self.FK_BeaconGPEmployeeEducationDetails_BeaconGPEmployee">
+      <End Role="BeaconGPEmployee" EntitySet="BeaconGPEmployee" />
+      <End Role="BeaconGPEmployeeEducationDetails" EntitySet="BeaconGPEmployeeEducationDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BeaconGPEmployeeWorkExperience_BeaconGPEmployee" Association="Self.FK_BeaconGPEmployeeWorkExperience_BeaconGPEmployee">
+      <End Role="BeaconGPEmployee" EntitySet="BeaconGPEmployee" />
+      <End Role="BeaconGPEmployeeWorkExperience" EntitySet="BeaconGPEmployeeWorkExperience" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BeaconGPITM_BeaconGPEmployeePersonalDetails" Association="Self.FK_BeaconGPITM_BeaconGPEmployeePersonalDetails">
+      <End Role="BeaconGPEmployeePersonalDetails" EntitySet="BeaconGPEmployeePersonalDetails" />
+      <End Role="BeaconGPITM" EntitySet="BeaconGPITM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmpID_BeaconGPEmployeeProduct_BeaconGPEmployee" Association="Self.FK_EmpID_BeaconGPEmployeeProduct_BeaconGPEmployee">
+      <End Role="BeaconGPEmployeePersonalDetails" EntitySet="BeaconGPEmployeePersonalDetails" />
+      <End Role="BeaconGPEmployeeProduct" EntitySet="BeaconGPEmployeeProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmpID_BeaconGPManager_BeaconGPEmployeePersonalDetails" Association="Self.FK_EmpID_BeaconGPManager_BeaconGPEmployeePersonalDetails">
+      <End Role="BeaconGPEmployeePersonalDetails" EntitySet="BeaconGPEmployeePersonalDetails" />
+      <End Role="BeaconGPManager" EntitySet="BeaconGPManager" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoles_UserRoles" Association="Self.FK_UserRoles_UserRoles">
+      <End Role="UserRoles" EntitySet="UserRoles" />
+      <End Role="UserRoles1" EntitySet="UserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="Fk1" Association="Self.Fk1">
+      <End Role="BeaconUserDetails" EntitySet="BeaconUserDetails" />
+      <End Role="BeaconScore" EntitySet="BeaconScore" />
+    </AssociationSet>
+    <AssociationSet Name="FKLeavingReason" Association="Self.FKLeavingReason">
+      <End Role="BeaconGPReasonForLeaving" EntitySet="BeaconGPReasonForLeaving" />
+      <End Role="BeaconGPTerminationDetails" EntitySet="BeaconGPTerminationDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

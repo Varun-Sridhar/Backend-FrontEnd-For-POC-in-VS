@@ -1,0 +1,1072 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BeaconScore">
+    <Key>
+      <PropertyRef Name="BeaconId" />
+      <PropertyRef Name="TestType" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="VacancyID" />
+    </Key>
+    <Property Name="BeaconId" Type="Int32" Nullable="false" />
+    <Property Name="TestType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Score" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Feedback" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="HROM" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Result" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="VacancyID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BeaconUserDetail" Relationship="Model.Fk1" FromRole="BeaconScore" ToRole="BeaconUserDetail" />
+  </EntityType>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BeaconScores" EntityType="Self.BeaconScore" />
+    <EntitySet Name="aspnet_Applications" EntityType="Model.aspnet_Applications" />
+    <EntitySet Name="aspnet_Membership" EntityType="Model.aspnet_Membership" />
+    <EntitySet Name="aspnet_Paths" EntityType="Model.aspnet_Paths" />
+    <EntitySet Name="aspnet_PersonalizationAllUsers" EntityType="Model.aspnet_PersonalizationAllUsers" />
+    <EntitySet Name="aspnet_PersonalizationPerUser" EntityType="Model.aspnet_PersonalizationPerUser" />
+    <EntitySet Name="aspnet_Profile" EntityType="Model.aspnet_Profile" />
+    <EntitySet Name="aspnet_Roles" EntityType="Model.aspnet_Roles" />
+    <EntitySet Name="aspnet_SchemaVersions" EntityType="Model.aspnet_SchemaVersions" />
+    <EntitySet Name="aspnet_Users" EntityType="Model.aspnet_Users" />
+    <EntitySet Name="aspnet_WebEvent_Events" EntityType="Model.aspnet_WebEvent_Events" />
+    <EntitySet Name="BeaconAppStatus" EntityType="Model.BeaconAppStatu" />
+    <EntitySet Name="BeaconColleges" EntityType="Model.BeaconCollege" />
+    <EntitySet Name="BeaconCountries" EntityType="Model.BeaconCountry" />
+    <EntitySet Name="BeaconCountryOfStudies" EntityType="Model.BeaconCountryOfStudy" />
+    <EntitySet Name="BeaconDegrees" EntityType="Model.BeaconDegree" />
+    <EntitySet Name="BeaconDepartments" EntityType="Model.BeaconDepartment" />
+    <EntitySet Name="BeaconGPDepartments" EntityType="Model.BeaconGPDepartment" />
+    <EntitySet Name="BeaconGPDivisions" EntityType="Model.BeaconGPDivision" />
+    <EntitySet Name="BeaconGPEmployees" EntityType="Model.BeaconGPEmployee" />
+    <EntitySet Name="BeaconGPEmployeeChildrenDetails" EntityType="Model.BeaconGPEmployeeChildrenDetail" />
+    <EntitySet Name="BeaconGPEmployeeEducationDetails" EntityType="Model.BeaconGPEmployeeEducationDetail" />
+    <EntitySet Name="BeaconGPEmployeePersonalDetails" EntityType="Model.BeaconGPEmployeePersonalDetail" />
+    <EntitySet Name="BeaconGPEmployeeProducts" EntityType="Model.BeaconGPEmployeeProduct" />
+    <EntitySet Name="BeaconGPEmployeeWorkExperiences" EntityType="Model.BeaconGPEmployeeWorkExperience" />
+    <EntitySet Name="BeaconGPExitInterviews" EntityType="Model.BeaconGPExitInterview" />
+    <EntitySet Name="BeaconGPExitQuestions" EntityType="Model.BeaconGPExitQuestion" />
+    <EntitySet Name="BeaconGPITMs" EntityType="Model.BeaconGPITM" />
+    <EntitySet Name="BeaconGPJobTitles" EntityType="Model.BeaconGPJobTitle" />
+    <EntitySet Name="BeaconGPManagers" EntityType="Model.BeaconGPManager" />
+    <EntitySet Name="BeaconGPProducts" EntityType="Model.BeaconGPProduct" />
+    <EntitySet Name="BeaconGPReasonForLeavings" EntityType="Model.BeaconGPReasonForLeaving" />
+    <EntitySet Name="BeaconGPResignationTypes" EntityType="Model.BeaconGPResignationType" />
+    <EntitySet Name="BeaconGPStatus" EntityType="Model.BeaconGPStatu" />
+    <EntitySet Name="BeaconGPTerminationDetails" EntityType="Model.BeaconGPTerminationDetail" />
+    <EntitySet Name="BeaconLocations" EntityType="Model.BeaconLocation" />
+    <EntitySet Name="BeaconPermissions" EntityType="Model.BeaconPermission" />
+    <EntitySet Name="BeaconUserDetails" EntityType="Model.BeaconUserDetail" />
+    <EntitySet Name="BeaconUserEducationDetails" EntityType="Model.BeaconUserEducationDetail" />
+    <EntitySet Name="BeaconUserStatus" EntityType="Model.BeaconUserStatu" />
+    <EntitySet Name="BeaconUserWorkExperiences" EntityType="Model.BeaconUserWorkExperience" />
+    <EntitySet Name="Roles" EntityType="Model.Role" />
+    <EntitySet Name="Roles_Department_Mapping" EntityType="Model.Roles_Department_Mapping" />
+    <EntitySet Name="Roles_Locations_Mapping" EntityType="Model.Roles_Locations_Mapping" />
+    <EntitySet Name="Roles_Permissions_Mapping" EntityType="Model.Roles_Permissions_Mapping" />
+    <EntitySet Name="UserRoles" EntityType="Model.UserRole" />
+    <EntitySet Name="BeaconCandidateStatusLists" EntityType="Model.BeaconCandidateStatusList" />
+    <EntitySet Name="BeaconGPHRLocationMappings" EntityType="Model.BeaconGPHRLocationMapping" />
+    <EntitySet Name="BeaconHROMs" EntityType="Model.BeaconHROM" />
+    <EntitySet Name="BeaconOfferLetterStatus" EntityType="Model.BeaconOfferLetterStatu" />
+    <EntitySet Name="BeaconSourceOfRecruitments" EntityType="Model.BeaconSourceOfRecruitment" />
+    <EntitySet Name="BeaconUserVacancyAdditionalInfoes" EntityType="Model.BeaconUserVacancyAdditionalInfo" />
+    <EntitySet Name="BeaconVacancies" EntityType="Model.BeaconVacancy" />
+    <EntitySet Name="BeaconVacancyInfoSources" EntityType="Model.BeaconVacancyInfoSource" />
+    <EntitySet Name="CompleteResultSets" EntityType="Model.CompleteResultSet" />
+    <EntitySet Name="CompleteResultSetArchives" EntityType="Model.CompleteResultSetArchive" />
+    <EntitySet Name="TAOMasterDatas" EntityType="Model.TAOMasterData" />
+    <AssociationSet Name="FK__aspnet_Me__Appli__21B6055D" Association="Model.FK__aspnet_Me__Appli__21B6055D">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pa__Appli__5AEE82B9" Association="Model.FK__aspnet_Pa__Appli__5AEE82B9">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Ro__Appli__440B1D61" Association="Model.FK__aspnet_Ro__Appli__440B1D61">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__Appli__0DAF0CB0" Association="Model.FK__aspnet_Us__Appli__0DAF0CB0">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__UserI__22AA2996" Association="Model.FK__aspnet_Me__UserI__22AA2996">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__628FA481" Association="Model.FK__aspnet_Pe__PathI__628FA481">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__68487DD7" Association="Model.FK__aspnet_Pe__PathI__68487DD7">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__UserI__693CA210" Association="Model.FK__aspnet_Pe__UserI__693CA210">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pr__UserI__38996AB5" Association="Model.FK__aspnet_Pr__UserI__38996AB5">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BeaconCol__Count__2CF2ADDF" Association="Model.FK__BeaconCol__Count__2CF2ADDF">
+      <End Role="BeaconCountryOfStudy" EntitySet="BeaconCountryOfStudies" />
+      <End Role="BeaconCollege" EntitySet="BeaconColleges" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BeaconGPEmployee_BeaconGPDepartment" Association="Model.FK_BeaconGPEmployee_BeaconGPDepartment">
+      <End Role="BeaconGPDepartment" EntitySet="BeaconGPDepartments" />
+      <End Role="BeaconGPEmployee" EntitySet="BeaconGPEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BeaconGPEmployeeEducationDetails_BeaconGPEmployee" Association="Model.FK_BeaconGPEmployeeEducationDetails_BeaconGPEmployee">
+      <End Role="BeaconGPEmployee" EntitySet="BeaconGPEmployees" />
+      <End Role="BeaconGPEmployeeEducationDetail" EntitySet="BeaconGPEmployeeEducationDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BeaconGPEmployeeWorkExperience_BeaconGPEmployee" Association="Model.FK_BeaconGPEmployeeWorkExperience_BeaconGPEmployee">
+      <End Role="BeaconGPEmployee" EntitySet="BeaconGPEmployees" />
+      <End Role="BeaconGPEmployeeWorkExperience" EntitySet="BeaconGPEmployeeWorkExperiences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BeaconGPITM_BeaconGPEmployeePersonalDetails" Association="Model.FK_BeaconGPITM_BeaconGPEmployeePersonalDetails">
+      <End Role="BeaconGPEmployeePersonalDetail" EntitySet="BeaconGPEmployeePersonalDetails" />
+      <End Role="BeaconGPITM" EntitySet="BeaconGPITMs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmpID_BeaconGPEmployeeProduct_BeaconGPEmployee" Association="Model.FK_EmpID_BeaconGPEmployeeProduct_BeaconGPEmployee">
+      <End Role="BeaconGPEmployeePersonalDetail" EntitySet="BeaconGPEmployeePersonalDetails" />
+      <End Role="BeaconGPEmployeeProduct" EntitySet="BeaconGPEmployeeProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmpID_BeaconGPManager_BeaconGPEmployeePersonalDetails" Association="Model.FK_EmpID_BeaconGPManager_BeaconGPEmployeePersonalDetails">
+      <End Role="BeaconGPEmployeePersonalDetail" EntitySet="BeaconGPEmployeePersonalDetails" />
+      <End Role="BeaconGPManager" EntitySet="BeaconGPManagers" />
+    </AssociationSet>
+    <AssociationSet Name="FKLeavingReason" Association="Model.FKLeavingReason">
+      <End Role="BeaconGPReasonForLeaving" EntitySet="BeaconGPReasonForLeavings" />
+      <End Role="BeaconGPTerminationDetail" EntitySet="BeaconGPTerminationDetails" />
+    </AssociationSet>
+    <AssociationSet Name="Fk1" Association="Model.Fk1">
+      <End Role="BeaconUserDetail" EntitySet="BeaconUserDetails" />
+      <End Role="BeaconScore" EntitySet="BeaconScores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoles_UserRoles" Association="Model.FK_UserRoles_UserRoles">
+      <End Role="UserRole" EntitySet="UserRoles" />
+      <End Role="UserRole1" EntitySet="UserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="aspnet_UsersInRoles" Association="Model.aspnet_UsersInRoles">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="aspnet_Applications">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredApplicationName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="aspnet_Membership" Relationship="Model.FK__aspnet_Me__Appli__21B6055D" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="Model.FK__aspnet_Pa__Appli__5AEE82B9" FromRole="aspnet_Applications" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Roles" Relationship="Model.FK__aspnet_Ro__Appli__440B1D61" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
+    <NavigationProperty Name="aspnet_Users" Relationship="Model.FK__aspnet_Us__Appli__0DAF0CB0" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+    <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="MobilePIN" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordQuestion" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordAnswer" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+    <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="Model.FK__aspnet_Me__Appli__21B6055D" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Users" Relationship="Model.FK__aspnet_Me__UserI__22AA2996" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Paths">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="PathId" Type="Guid" Nullable="false" />
+    <Property Name="Path" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredPath" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="Model.FK__aspnet_Pa__Appli__5AEE82B9" FromRole="aspnet_Paths" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_PersonalizationAllUsers" Relationship="Model.FK__aspnet_Pe__PathI__628FA481" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationAllUsers" />
+    <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="Model.FK__aspnet_Pe__PathI__68487DD7" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationPerUser" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationAllUsers">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="PathId" Type="Guid" Nullable="false" />
+    <Property Name="PageSettings" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="Model.FK__aspnet_Pe__PathI__628FA481" FromRole="aspnet_PersonalizationAllUsers" ToRole="aspnet_Paths" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationPerUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="PathId" Type="Guid" />
+    <Property Name="UserId" Type="Guid" />
+    <Property Name="PageSettings" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="Model.FK__aspnet_Pe__PathI__68487DD7" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Users" Relationship="Model.FK__aspnet_Pe__UserI__693CA210" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Profile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="PropertyNames" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PropertyValuesString" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PropertyValuesBinary" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="aspnet_Users" Relationship="Model.FK__aspnet_Pr__UserI__38996AB5" FromRole="aspnet_Profile" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredRoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="Model.FK__aspnet_Ro__Appli__440B1D61" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Users" Relationship="Model.aspnet_UsersInRoles" FromRole="aspnet_Roles" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_SchemaVersions">
+    <Key>
+      <PropertyRef Name="Feature" />
+      <PropertyRef Name="CompatibleSchemaVersion" />
+    </Key>
+    <Property Name="Feature" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="CompatibleSchemaVersion" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsCurrentVersion" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredUserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="MobileAlias" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BeaconID" Type="Int32" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="Model.FK__aspnet_Us__Appli__0DAF0CB0" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Membership" Relationship="Model.FK__aspnet_Me__UserI__22AA2996" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="Model.FK__aspnet_Pe__UserI__693CA210" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
+    <NavigationProperty Name="aspnet_Profile" Relationship="Model.FK__aspnet_Pr__UserI__38996AB5" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
+    <NavigationProperty Name="aspnet_Roles" Relationship="Model.aspnet_UsersInRoles" FromRole="aspnet_Users" ToRole="aspnet_Roles" />
+  </EntityType>
+  <EntityType Name="aspnet_WebEvent_Events">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="EventTimeUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EventTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EventType" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EventSequence" Type="Decimal" Nullable="false" Precision="19" Scale="0" />
+    <Property Name="EventOccurrence" Type="Decimal" Nullable="false" Precision="19" Scale="0" />
+    <Property Name="EventCode" Type="Int32" Nullable="false" />
+    <Property Name="EventDetailCode" Type="Int32" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="ApplicationPath" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ApplicationVirtualPath" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="MachineName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="RequestUrl" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="ExceptionType" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BeaconAppStatu">
+    <Key>
+      <PropertyRef Name="AppStatusID" />
+    </Key>
+    <Property Name="AppStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppStatus" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BeaconCollege">
+    <Key>
+      <PropertyRef Name="CollegeID" />
+    </Key>
+    <Property Name="CountryOfStudyID" Type="Int32" />
+    <Property Name="CollegeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="College" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BeaconCountryOfStudy" Relationship="Model.FK__BeaconCol__Count__2CF2ADDF" FromRole="BeaconCollege" ToRole="BeaconCountryOfStudy" />
+  </EntityType>
+  <EntityType Name="BeaconCountry">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Country" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="isActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="BeaconCountryOfStudy">
+    <Key>
+      <PropertyRef Name="CountryOfStudyID" />
+    </Key>
+    <Property Name="CountryOfStudyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Country" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BeaconColleges" Relationship="Model.FK__BeaconCol__Count__2CF2ADDF" FromRole="BeaconCountryOfStudy" ToRole="BeaconCollege" />
+  </EntityType>
+  <EntityType Name="BeaconDegree">
+    <Key>
+      <PropertyRef Name="DegreeID" />
+    </Key>
+    <Property Name="DegreeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Degree" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BeaconDepartment">
+    <Key>
+      <PropertyRef Name="DeptID" />
+    </Key>
+    <Property Name="DeptID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeptName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BeaconGPDepartment">
+    <Key>
+      <PropertyRef Name="DepId" />
+    </Key>
+    <Property Name="DepId" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="DepDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BeaconGPEmployees" Relationship="Model.FK_BeaconGPEmployee_BeaconGPDepartment" FromRole="BeaconGPDepartment" ToRole="BeaconGPEmployee" />
+  </EntityType>
+  <EntityType Name="BeaconGPDivision">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="division" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BeaconGPEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="BeaconId" Type="Int32" />
+    <Property Name="DirectManagerEmployeeId" Type="Int32" />
+    <Property Name="MatrixManagerEmployeeId" Type="Int32" />
+    <Property Name="HireDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Division" Type="Int32" />
+    <Property Name="Department" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="JobTitle" Type="Int32" />
+    <Property Name="JobTitle2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="Int32" Nullable="false" />
+    <Property Name="Sublocation" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="ConfirmationDate" Type="DateTime" Precision="3" />
+    <Property Name="PayrollId" Type="Int32" Nullable="false" />
+    <Property Name="JobtitleDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TradingSystem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BeaconGPDepartment" Relationship="Model.FK_BeaconGPEmployee_BeaconGPDepartment" FromRole="BeaconGPEmployee" ToRole="BeaconGPDepartment" />
+    <NavigationProperty Name="BeaconGPEmployeeEducationDetails" Relationship="Model.FK_BeaconGPEmployeeEducationDetails_BeaconGPEmployee" FromRole="BeaconGPEmployee" ToRole="BeaconGPEmployeeEducationDetail" />
+    <NavigationProperty Name="BeaconGPEmployeeWorkExperiences" Relationship="Model.FK_BeaconGPEmployeeWorkExperience_BeaconGPEmployee" FromRole="BeaconGPEmployee" ToRole="BeaconGPEmployeeWorkExperience" />
+  </EntityType>
+  <EntityType Name="BeaconGPEmployeeChildrenDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="ChildName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ChildDOB" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="BeaconGPEmployeeEducationDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="Degree" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="School" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="YearOfPassing" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CgpaORPercent" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+    <Property Name="standard" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Specialization" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CountryOfStudy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BeaconGPEmployee" Relationship="Model.FK_BeaconGPEmployeeEducationDetails_BeaconGPEmployee" FromRole="BeaconGPEmployeeEducationDetail" ToRole="BeaconGPEmployee" />
+  </EntityType>
+  <EntityType Name="BeaconGPEmployeePersonalDetail">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BloodGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PanNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PassportNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateofBirth" Type="DateTime" Precision="3" />
+    <Property Name="AnniversaryDate" Type="DateTime" Precision="3" />
+    <Property Name="NoOfChildren" Type="Int32" />
+    <Property Name="PersonalIdentificationNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaritalStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FatherName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MotherName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="SpouseName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PresentAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PermanentAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PersonalPhone1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PersonalPhone2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OfficePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IPExtension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PersonalEmail" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="OfficeEmail" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HomeTown" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="Int32" />
+    <Property Name="PreviousExperience" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="JobHops" Type="Int32" />
+    <Property Name="PreferedLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmergencyContactName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmergencyContactNumber" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PFNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UANNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ICICIAccountNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeConversionDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="BeaconGPITMs" Relationship="Model.FK_BeaconGPITM_BeaconGPEmployeePersonalDetails" FromRole="BeaconGPEmployeePersonalDetail" ToRole="BeaconGPITM" />
+    <NavigationProperty Name="BeaconGPEmployeeProducts" Relationship="Model.FK_EmpID_BeaconGPEmployeeProduct_BeaconGPEmployee" FromRole="BeaconGPEmployeePersonalDetail" ToRole="BeaconGPEmployeeProduct" />
+    <NavigationProperty Name="BeaconGPManager" Relationship="Model.FK_EmpID_BeaconGPManager_BeaconGPEmployeePersonalDetails" FromRole="BeaconGPEmployeePersonalDetail" ToRole="BeaconGPManager" />
+  </EntityType>
+  <EntityType Name="BeaconGPEmployeeProduct">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="PrimaryOrSecondary" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdditionalProductId" Type="Int32" />
+    <NavigationProperty Name="BeaconGPEmployeePersonalDetail" Relationship="Model.FK_EmpID_BeaconGPEmployeeProduct_BeaconGPEmployee" FromRole="BeaconGPEmployeeProduct" ToRole="BeaconGPEmployeePersonalDetail" />
+  </EntityType>
+  <EntityType Name="BeaconGPEmployeeWorkExperience">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="JobTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsCurrentPosition" Type="Boolean" />
+    <Property Name="DateFrom" Type="DateTime" Precision="0" />
+    <Property Name="DateTo" Type="DateTime" Precision="0" />
+    <Property Name="comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="BeaconGPEmployee" Relationship="Model.FK_BeaconGPEmployeeWorkExperience_BeaconGPEmployee" FromRole="BeaconGPEmployeeWorkExperience" ToRole="BeaconGPEmployee" />
+  </EntityType>
+  <EntityType Name="BeaconGPExitInterview">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="Question" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SequenceNo" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BeaconGPExitQuestion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Question" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="isEnabled" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="BeaconGPITM">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="ITM" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrimaryOrSecondary" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ISV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Client" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BeaconGPEmployeePersonalDetail" Relationship="Model.FK_BeaconGPITM_BeaconGPEmployeePersonalDetails" FromRole="BeaconGPITM" ToRole="BeaconGPEmployeePersonalDetail" />
+  </EntityType>
+  <EntityType Name="BeaconGPJobTitle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BeaconGPManager">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BeaconGPEmployeePersonalDetail" Relationship="Model.FK_EmpID_BeaconGPManager_BeaconGPEmployeePersonalDetails" FromRole="BeaconGPManager" ToRole="BeaconGPEmployeePersonalDetail" />
+  </EntityType>
+  <EntityType Name="BeaconGPProduct">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ProductAssetCalss" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Exchange" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BeaconGPReasonForLeaving">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BeaconGPTerminationDetails" Relationship="Model.FKLeavingReason" FromRole="BeaconGPReasonForLeaving" ToRole="BeaconGPTerminationDetail" />
+  </EntityType>
+  <EntityType Name="BeaconGPResignationType">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BeaconGPStatu">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BeaconGPTerminationDetail">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="DateOfResignation" Type="DateTime" Precision="3" />
+    <Property Name="ReasonForLeavingId" Type="Int32" />
+    <Property Name="LastDayWorked" Type="DateTime" Precision="3" />
+    <Property Name="ResignationType" Type="Int32" />
+    <Property Name="StatusID" Type="Int32" />
+    <NavigationProperty Name="BeaconGPReasonForLeaving" Relationship="Model.FKLeavingReason" FromRole="BeaconGPTerminationDetail" ToRole="BeaconGPReasonForLeaving" />
+  </EntityType>
+  <EntityType Name="BeaconLocation">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="LocationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Location" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="isActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="BeaconPermission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PermissionsId" Type="Int32" Nullable="false" />
+    <Property Name="Permissions_Desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Permission_Display" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RoleId" Type="Int32" />
+    <Property Name="isMasterTable" Type="Boolean" />
+    <Property Name="MasterTableId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BeaconUserDetail">
+    <Key>
+      <PropertyRef Name="BeaconId" />
+    </Key>
+    <Property Name="BeaconId" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="PermanentAddress" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HomeTown" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="Int32" Nullable="false" />
+    <Property Name="PreviousExperience" Type="String" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="JobHops" Type="Int32" Nullable="false" />
+    <Property Name="SpecialTags" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PreferedLocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="QueryStringFlag" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BeaconScores" Relationship="Model.Fk1" FromRole="BeaconUserDetail" ToRole="BeaconScore" />
+  </EntityType>
+  <EntityType Name="BeaconUserEducationDetail">
+    <Key>
+      <PropertyRef Name="BeaconId" />
+      <PropertyRef Name="Standard" />
+    </Key>
+    <Property Name="BeaconId" Type="Int32" Nullable="false" />
+    <Property Name="Standard" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Percentage" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="YearOfCompletion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Specialization" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="College" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CountryOfStudy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Degree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BeaconUserStatu">
+    <Key>
+      <PropertyRef Name="BeaconId" />
+    </Key>
+    <Property Name="BeaconId" Type="Int32" Nullable="false" />
+    <Property Name="CandidateStatus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OfferLetterStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AllocatedLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ExpectedDateOfJoining" Type="DateTime" Precision="3" />
+    <Property Name="ReferredBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SourceOfRecruitment" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="DateOfRegistration" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="BeaconUserWorkExperience">
+    <Key>
+      <PropertyRef Name="BeaconId" />
+      <PropertyRef Name="CompanyName" />
+    </Key>
+    <Property Name="BeaconId" Type="Int32" Nullable="false" />
+    <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="JobTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsCurrentPosition" Type="Boolean" />
+    <Property Name="DateFrom" Type="DateTime" Precision="0" />
+    <Property Name="DateTo" Type="DateTime" Precision="0" />
+    <Property Name="comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Roles_Desc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Roles_Department_Mapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleId" Type="Int32" />
+    <Property Name="DepartmentID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Roles_Locations_Mapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleId" Type="Int32" />
+    <Property Name="LocationID" Type="Int32" />
+    <Property Name="SubLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Roles_Permissions_Mapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleId" Type="Int32" />
+    <Property Name="PermissionsId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int32" />
+    <Property Name="RoleId" Type="Int32" />
+    <NavigationProperty Name="UserRoles1" Relationship="Model.FK_UserRoles_UserRoles" FromRole="UserRole" ToRole="UserRole1" />
+    <NavigationProperty Name="UserRole1" Relationship="Model.FK_UserRoles_UserRoles" FromRole="UserRole1" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="BeaconCandidateStatusList">
+    <Key>
+      <PropertyRef Name="StausID" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="StausID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BeaconGPHRLocationMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Location" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HRName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BeaconHROM">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="HROM" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HROM" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BeaconOfferLetterStatu">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BeaconSourceOfRecruitment">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="SourceOfRecruitment" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SourceOfRecruitment" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BeaconUserVacancyAdditionalInfo">
+    <Key>
+      <PropertyRef Name="BeaconID" />
+      <PropertyRef Name="VacancyID" />
+    </Key>
+    <Property Name="BeaconID" Type="Int32" Nullable="false" />
+    <Property Name="VacancyID" Type="Int32" Nullable="false" />
+    <Property Name="SelectionQ1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AnswerSelectionQ1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SelectionQ2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AnswerSelectionQ2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SelectionQ3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AnswerSelectionQ3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="KillerQ1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AnswerKillerQ1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="KillerQ2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AnswerKillerQ2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="KillerQ3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AnswerKillerQ3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdated" Type="DateTime" Precision="3" />
+    <Property Name="AppStatusId" Type="Int32" />
+    <Property Name="CountryEligibility" Type="Boolean" />
+    <Property Name="CriminalCharge" Type="Boolean" />
+    <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BeaconVacancy">
+    <Key>
+      <PropertyRef Name="VacancyID" />
+    </Key>
+    <Property Name="VacancyID" Type="Int32" Nullable="false" />
+    <Property Name="OpeningDate" Type="DateTime" Precision="3" />
+    <Property Name="ClosingDate" Type="DateTime" Precision="3" />
+    <Property Name="VacancyStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VacancyTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="VacancyDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Salary" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="VacancyRole" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DeptID" Type="Int32" />
+    <Property Name="Notes" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="BeaconVacancyInfoSource">
+    <Key>
+      <PropertyRef Name="SourceID" />
+    </Key>
+    <Property Name="SourceID" Type="Int32" Nullable="false" />
+    <Property Name="Source" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CompleteResultSet">
+    <Key>
+      <PropertyRef Name="TestId" />
+    </Key>
+    <Property Name="TestId" Type="Int32" Nullable="false" />
+    <Property Name="TestAuthor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="QTIKey" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NumOfAttempt" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CompletionStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Score" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Response" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TestLabel" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="OrderId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CompleteResultSetArchive">
+    <Key>
+      <PropertyRef Name="TestId" />
+    </Key>
+    <Property Name="TestId" Type="Int32" Nullable="false" />
+    <Property Name="TestAuthor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="QTIKey" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NumOfAttempt" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CompletionStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Score" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Response" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Duration" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TestLabel" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="OrderId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TAOMasterData">
+    <Key>
+      <PropertyRef Name="Label" />
+      <PropertyRef Name="Score" />
+      <PropertyRef Name="LowLevel" />
+      <PropertyRef Name="HighLevel" />
+    </Key>
+    <Property Name="Label" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Score" Type="Decimal" Nullable="false" Precision="5" Scale="0" />
+    <Property Name="LowLevel" Type="Decimal" Nullable="false" Precision="5" Scale="0" />
+    <Property Name="HighLevel" Type="Decimal" Nullable="false" Precision="5" Scale="0" />
+    <Property Name="TimeLimits" Type="Decimal" Precision="5" Scale="0" />
+  </EntityType>
+  <Association Name="FK__aspnet_Me__Appli__21B6055D">
+    <End Type="Model.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
+    <End Type="Model.aspnet_Membership" Role="aspnet_Membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pa__Appli__5AEE82B9">
+    <End Type="Model.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
+    <End Type="Model.aspnet_Paths" Role="aspnet_Paths" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Paths">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Ro__Appli__440B1D61">
+    <End Type="Model.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
+    <End Type="Model.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__Appli__0DAF0CB0">
+    <End Type="Model.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
+    <End Type="Model.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__UserI__22AA2996">
+    <End Type="Model.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+    <End Type="Model.aspnet_Membership" Role="aspnet_Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__628FA481">
+    <End Type="Model.aspnet_Paths" Role="aspnet_Paths" Multiplicity="1" />
+    <End Type="Model.aspnet_PersonalizationAllUsers" Role="aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationAllUsers">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__68487DD7">
+    <End Type="Model.aspnet_Paths" Role="aspnet_Paths" Multiplicity="0..1" />
+    <End Type="Model.aspnet_PersonalizationPerUser" Role="aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__UserI__693CA210">
+    <End Type="Model.aspnet_Users" Role="aspnet_Users" Multiplicity="0..1" />
+    <End Type="Model.aspnet_PersonalizationPerUser" Role="aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pr__UserI__38996AB5">
+    <End Type="Model.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+    <End Type="Model.aspnet_Profile" Role="aspnet_Profile" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Profile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BeaconCol__Count__2CF2ADDF">
+    <End Type="Model.BeaconCountryOfStudy" Role="BeaconCountryOfStudy" Multiplicity="0..1" />
+    <End Type="Model.BeaconCollege" Role="BeaconCollege" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BeaconCountryOfStudy">
+        <PropertyRef Name="CountryOfStudyID" />
+      </Principal>
+      <Dependent Role="BeaconCollege">
+        <PropertyRef Name="CountryOfStudyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BeaconGPEmployee_BeaconGPDepartment">
+    <End Type="Model.BeaconGPDepartment" Role="BeaconGPDepartment" Multiplicity="0..1" />
+    <End Type="Model.BeaconGPEmployee" Role="BeaconGPEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BeaconGPDepartment">
+        <PropertyRef Name="DepId" />
+      </Principal>
+      <Dependent Role="BeaconGPEmployee">
+        <PropertyRef Name="Department" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BeaconGPEmployeeEducationDetails_BeaconGPEmployee">
+    <End Type="Model.BeaconGPEmployee" Role="BeaconGPEmployee" Multiplicity="1" />
+    <End Type="Model.BeaconGPEmployeeEducationDetail" Role="BeaconGPEmployeeEducationDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BeaconGPEmployee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="BeaconGPEmployeeEducationDetail">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BeaconGPEmployeeWorkExperience_BeaconGPEmployee">
+    <End Type="Model.BeaconGPEmployee" Role="BeaconGPEmployee" Multiplicity="1" />
+    <End Type="Model.BeaconGPEmployeeWorkExperience" Role="BeaconGPEmployeeWorkExperience" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BeaconGPEmployee">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="BeaconGPEmployeeWorkExperience">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BeaconGPITM_BeaconGPEmployeePersonalDetails">
+    <End Type="Model.BeaconGPEmployeePersonalDetail" Role="BeaconGPEmployeePersonalDetail" Multiplicity="1" />
+    <End Type="Model.BeaconGPITM" Role="BeaconGPITM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BeaconGPEmployeePersonalDetail">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="BeaconGPITM">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmpID_BeaconGPEmployeeProduct_BeaconGPEmployee">
+    <End Type="Model.BeaconGPEmployeePersonalDetail" Role="BeaconGPEmployeePersonalDetail" Multiplicity="1" />
+    <End Type="Model.BeaconGPEmployeeProduct" Role="BeaconGPEmployeeProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BeaconGPEmployeePersonalDetail">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="BeaconGPEmployeeProduct">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmpID_BeaconGPManager_BeaconGPEmployeePersonalDetails">
+    <End Type="Model.BeaconGPEmployeePersonalDetail" Role="BeaconGPEmployeePersonalDetail" Multiplicity="1" />
+    <End Type="Model.BeaconGPManager" Role="BeaconGPManager" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="BeaconGPEmployeePersonalDetail">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="BeaconGPManager">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKLeavingReason">
+    <End Type="Model.BeaconGPReasonForLeaving" Role="BeaconGPReasonForLeaving" Multiplicity="0..1" />
+    <End Type="Model.BeaconGPTerminationDetail" Role="BeaconGPTerminationDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BeaconGPReasonForLeaving">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BeaconGPTerminationDetail">
+        <PropertyRef Name="ReasonForLeavingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk1">
+    <End Type="Model.BeaconUserDetail" Role="BeaconUserDetail" Multiplicity="1" />
+    <End Type="Model.BeaconScore" Role="BeaconScore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BeaconUserDetail">
+        <PropertyRef Name="BeaconId" />
+      </Principal>
+      <Dependent Role="BeaconScore">
+        <PropertyRef Name="BeaconId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoles_UserRoles">
+    <End Type="Model.UserRole" Role="UserRole" Multiplicity="1" />
+    <End Type="Model.UserRole" Role="UserRole1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UserRole">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRole1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="aspnet_UsersInRoles">
+    <End Type="Model.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
+    <End Type="Model.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
+  </Association>
+</Schema>

@@ -1,0 +1,713 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="BeaconScores">
+      <EntityTypeMapping TypeName="Model.BeaconScore">
+        <MappingFragment StoreEntitySet="BeaconScore">
+          <ScalarProperty Name="BeaconId" ColumnName="BeaconId" />
+          <ScalarProperty Name="TestType" ColumnName="TestType" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="HROM" ColumnName="HROM" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="VacancyID" ColumnName="VacancyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Applications">
+      <EntityTypeMapping TypeName="Model.aspnet_Applications">
+        <MappingFragment StoreEntitySet="aspnet_Applications">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="LoweredApplicationName" ColumnName="LoweredApplicationName" />
+          <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Membership">
+      <EntityTypeMapping TypeName="Model.aspnet_Membership">
+        <MappingFragment StoreEntitySet="aspnet_Membership">
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+          <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+          <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+          <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+          <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+          <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+          <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
+          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+          <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Paths">
+      <EntityTypeMapping TypeName="Model.aspnet_Paths">
+        <MappingFragment StoreEntitySet="aspnet_Paths">
+          <ScalarProperty Name="LoweredPath" ColumnName="LoweredPath" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_PersonalizationAllUsers">
+      <EntityTypeMapping TypeName="Model.aspnet_PersonalizationAllUsers">
+        <MappingFragment StoreEntitySet="aspnet_PersonalizationAllUsers">
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="PageSettings" ColumnName="PageSettings" />
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_PersonalizationPerUser">
+      <EntityTypeMapping TypeName="Model.aspnet_PersonalizationPerUser">
+        <MappingFragment StoreEntitySet="aspnet_PersonalizationPerUser">
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="PageSettings" ColumnName="PageSettings" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Profile">
+      <EntityTypeMapping TypeName="Model.aspnet_Profile">
+        <MappingFragment StoreEntitySet="aspnet_Profile">
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="PropertyValuesBinary" ColumnName="PropertyValuesBinary" />
+          <ScalarProperty Name="PropertyValuesString" ColumnName="PropertyValuesString" />
+          <ScalarProperty Name="PropertyNames" ColumnName="PropertyNames" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Roles">
+      <EntityTypeMapping TypeName="Model.aspnet_Roles">
+        <MappingFragment StoreEntitySet="aspnet_Roles">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_SchemaVersions">
+      <EntityTypeMapping TypeName="Model.aspnet_SchemaVersions">
+        <MappingFragment StoreEntitySet="aspnet_SchemaVersions">
+          <ScalarProperty Name="IsCurrentVersion" ColumnName="IsCurrentVersion" />
+          <ScalarProperty Name="CompatibleSchemaVersion" ColumnName="CompatibleSchemaVersion" />
+          <ScalarProperty Name="Feature" ColumnName="Feature" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Users">
+      <EntityTypeMapping TypeName="Model.aspnet_Users">
+        <MappingFragment StoreEntitySet="aspnet_Users">
+          <ScalarProperty Name="BeaconID" ColumnName="BeaconID" />
+          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+          <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+          <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+          <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_WebEvent_Events">
+      <EntityTypeMapping TypeName="Model.aspnet_WebEvent_Events">
+        <MappingFragment StoreEntitySet="aspnet_WebEvent_Events">
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="ExceptionType" ColumnName="ExceptionType" />
+          <ScalarProperty Name="RequestUrl" ColumnName="RequestUrl" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="ApplicationVirtualPath" ColumnName="ApplicationVirtualPath" />
+          <ScalarProperty Name="ApplicationPath" ColumnName="ApplicationPath" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="EventDetailCode" ColumnName="EventDetailCode" />
+          <ScalarProperty Name="EventCode" ColumnName="EventCode" />
+          <ScalarProperty Name="EventOccurrence" ColumnName="EventOccurrence" />
+          <ScalarProperty Name="EventSequence" ColumnName="EventSequence" />
+          <ScalarProperty Name="EventType" ColumnName="EventType" />
+          <ScalarProperty Name="EventTime" ColumnName="EventTime" />
+          <ScalarProperty Name="EventTimeUtc" ColumnName="EventTimeUtc" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconAppStatus">
+      <EntityTypeMapping TypeName="Model.BeaconAppStatu">
+        <MappingFragment StoreEntitySet="BeaconAppStatus">
+          <ScalarProperty Name="AppStatus" ColumnName="AppStatus" />
+          <ScalarProperty Name="AppStatusID" ColumnName="AppStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconColleges">
+      <EntityTypeMapping TypeName="Model.BeaconCollege">
+        <MappingFragment StoreEntitySet="BeaconColleges">
+          <ScalarProperty Name="College" ColumnName="College" />
+          <ScalarProperty Name="CollegeID" ColumnName="CollegeID" />
+          <ScalarProperty Name="CountryOfStudyID" ColumnName="CountryOfStudyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconCountries">
+      <EntityTypeMapping TypeName="Model.BeaconCountry">
+        <MappingFragment StoreEntitySet="BeaconCountry">
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconCountryOfStudies">
+      <EntityTypeMapping TypeName="Model.BeaconCountryOfStudy">
+        <MappingFragment StoreEntitySet="BeaconCountryOfStudy">
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="CountryOfStudyID" ColumnName="CountryOfStudyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconDegrees">
+      <EntityTypeMapping TypeName="Model.BeaconDegree">
+        <MappingFragment StoreEntitySet="BeaconDegrees">
+          <ScalarProperty Name="Degree" ColumnName="Degree" />
+          <ScalarProperty Name="DegreeID" ColumnName="DegreeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconDepartments">
+      <EntityTypeMapping TypeName="Model.BeaconDepartment">
+        <MappingFragment StoreEntitySet="BeaconDepartment">
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+          <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconGPDepartments">
+      <EntityTypeMapping TypeName="Model.BeaconGPDepartment">
+        <MappingFragment StoreEntitySet="BeaconGPDepartment">
+          <ScalarProperty Name="DepDescription" ColumnName="DepDescription" />
+          <ScalarProperty Name="DepId" ColumnName="DepId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconGPDivisions">
+      <EntityTypeMapping TypeName="Model.BeaconGPDivision">
+        <MappingFragment StoreEntitySet="BeaconGPDivision">
+          <ScalarProperty Name="division" ColumnName="division" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconGPEmployees">
+      <EntityTypeMapping TypeName="Model.BeaconGPEmployee">
+        <MappingFragment StoreEntitySet="BeaconGPEmployee">
+          <ScalarProperty Name="TradingSystem" ColumnName="TradingSystem" />
+          <ScalarProperty Name="JobtitleDescription" ColumnName="JobtitleDescription" />
+          <ScalarProperty Name="PayrollId" ColumnName="PayrollId" />
+          <ScalarProperty Name="ConfirmationDate" ColumnName="ConfirmationDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sublocation" ColumnName="Sublocation" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="JobTitle2" ColumnName="JobTitle2" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+          <ScalarProperty Name="MatrixManagerEmployeeId" ColumnName="MatrixManagerEmployeeId" />
+          <ScalarProperty Name="DirectManagerEmployeeId" ColumnName="DirectManagerEmployeeId" />
+          <ScalarProperty Name="BeaconId" ColumnName="BeaconId" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconGPEmployeeChildrenDetails">
+      <EntityTypeMapping TypeName="Model.BeaconGPEmployeeChildrenDetail">
+        <MappingFragment StoreEntitySet="BeaconGPEmployeeChildrenDetails">
+          <ScalarProperty Name="ChildDOB" ColumnName="ChildDOB" />
+          <ScalarProperty Name="ChildName" ColumnName="ChildName" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconGPEmployeeEducationDetails">
+      <EntityTypeMapping TypeName="Model.BeaconGPEmployeeEducationDetail">
+        <MappingFragment StoreEntitySet="BeaconGPEmployeeEducationDetails">
+          <ScalarProperty Name="CountryOfStudy" ColumnName="CountryOfStudy" />
+          <ScalarProperty Name="Specialization" ColumnName="Specialization" />
+          <ScalarProperty Name="standard" ColumnName="standard" />
+          <ScalarProperty Name="CgpaORPercent" ColumnName="CgpaORPercent" />
+          <ScalarProperty Name="YearOfPassing" ColumnName="YearOfPassing" />
+          <ScalarProperty Name="School" ColumnName="School" />
+          <ScalarProperty Name="Degree" ColumnName="Degree" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconGPEmployeePersonalDetails">
+      <EntityTypeMapping TypeName="Model.BeaconGPEmployeePersonalDetail">
+        <MappingFragment StoreEntitySet="BeaconGPEmployeePersonalDetails">
+          <ScalarProperty Name="EmployeeConversionDate" ColumnName="EmployeeConversionDate" />
+          <ScalarProperty Name="ICICIAccountNumber" ColumnName="ICICIAccountNumber" />
+          <ScalarProperty Name="UANNumber" ColumnName="UANNumber" />
+          <ScalarProperty Name="PFNumber" ColumnName="PFNumber" />
+          <ScalarProperty Name="EmergencyContactNumber" ColumnName="EmergencyContactNumber" />
+          <ScalarProperty Name="EmergencyContactName" ColumnName="EmergencyContactName" />
+          <ScalarProperty Name="PreferedLocation" ColumnName="PreferedLocation" />
+          <ScalarProperty Name="JobHops" ColumnName="JobHops" />
+          <ScalarProperty Name="PreviousExperience" ColumnName="PreviousExperience" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="HomeTown" ColumnName="HomeTown" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="OfficeEmail" ColumnName="OfficeEmail" />
+          <ScalarProperty Name="PersonalEmail" ColumnName="PersonalEmail" />
+          <ScalarProperty Name="IPExtension" ColumnName="IPExtension" />
+          <ScalarProperty Name="OfficePhone" ColumnName="OfficePhone" />
+          <ScalarProperty Name="PersonalPhone2" ColumnName="PersonalPhone2" />
+          <ScalarProperty Name="PersonalPhone1" ColumnName="PersonalPhone1" />
+          <ScalarProperty Name="PermanentAddress" ColumnName="PermanentAddress" />
+          <ScalarProperty Name="PresentAddress" ColumnName="PresentAddress" />
+          <ScalarProperty Name="SpouseName" ColumnName="SpouseName" />
+          <ScalarProperty Name="MotherName" ColumnName="MotherName" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="PersonalIdentificationNo" ColumnName="PersonalIdentificationNo" />
+          <ScalarProperty Name="NoOfChildren" ColumnName="NoOfChildren" />
+          <ScalarProperty Name="AnniversaryDate" ColumnName="AnniversaryDate" />
+          <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+          <ScalarProperty Name="PassportNo" ColumnName="PassportNo" />
+          <ScalarProperty Name="PanNo" ColumnName="PanNo" />
+          <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconGPEmployeeProducts">
+      <EntityTypeMapping TypeName="Model.BeaconGPEmployeeProduct">
+        <MappingFragment StoreEntitySet="BeaconGPEmployeeProduct">
+          <ScalarProperty Name="AdditionalProductId" ColumnName="AdditionalProductId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PrimaryOrSecondary" ColumnName="PrimaryOrSecondary" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconGPEmployeeWorkExperiences">
+      <EntityTypeMapping TypeName="Model.BeaconGPEmployeeWorkExperience">
+        <MappingFragment StoreEntitySet="BeaconGPEmployeeWorkExperience">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="DateTo" ColumnName="DateTo" />
+          <ScalarProperty Name="DateFrom" ColumnName="DateFrom" />
+          <ScalarProperty Name="IsCurrentPosition" ColumnName="IsCurrentPosition" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconGPExitInterviews">
+      <EntityTypeMapping TypeName="Model.BeaconGPExitInterview">
+        <MappingFragment StoreEntitySet="BeaconGPExitInterview">
+          <ScalarProperty Name="SequenceNo" ColumnName="SequenceNo" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconGPExitQuestions">
+      <EntityTypeMapping TypeName="Model.BeaconGPExitQuestion">
+        <MappingFragment StoreEntitySet="BeaconGPExitQuestions">
+          <ScalarProperty Name="isEnabled" ColumnName="isEnabled" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconGPITMs">
+      <EntityTypeMapping TypeName="Model.BeaconGPITM">
+        <MappingFragment StoreEntitySet="BeaconGPITM">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Client" ColumnName="Client" />
+          <ScalarProperty Name="ISV" ColumnName="ISV" />
+          <ScalarProperty Name="PrimaryOrSecondary" ColumnName="PrimaryOrSecondary" />
+          <ScalarProperty Name="ITM" ColumnName="ITM" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconGPJobTitles">
+      <EntityTypeMapping TypeName="Model.BeaconGPJobTitle">
+        <MappingFragment StoreEntitySet="BeaconGPJobTitle">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconGPManagers">
+      <EntityTypeMapping TypeName="Model.BeaconGPManager">
+        <MappingFragment StoreEntitySet="BeaconGPManager">
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconGPProducts">
+      <EntityTypeMapping TypeName="Model.BeaconGPProduct">
+        <MappingFragment StoreEntitySet="BeaconGPProduct">
+          <ScalarProperty Name="Exchange" ColumnName="Exchange" />
+          <ScalarProperty Name="ProductAssetCalss" ColumnName="ProductAssetCalss" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconGPReasonForLeavings">
+      <EntityTypeMapping TypeName="Model.BeaconGPReasonForLeaving">
+        <MappingFragment StoreEntitySet="BeaconGPReasonForLeaving">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconGPResignationTypes">
+      <EntityTypeMapping TypeName="Model.BeaconGPResignationType">
+        <MappingFragment StoreEntitySet="BeaconGPResignationType">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconGPStatus">
+      <EntityTypeMapping TypeName="Model.BeaconGPStatu">
+        <MappingFragment StoreEntitySet="BeaconGPStatus">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconGPTerminationDetails">
+      <EntityTypeMapping TypeName="Model.BeaconGPTerminationDetail">
+        <MappingFragment StoreEntitySet="BeaconGPTerminationDetails">
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="ResignationType" ColumnName="ResignationType" />
+          <ScalarProperty Name="LastDayWorked" ColumnName="LastDayWorked" />
+          <ScalarProperty Name="ReasonForLeavingId" ColumnName="ReasonForLeavingId" />
+          <ScalarProperty Name="DateOfResignation" ColumnName="DateOfResignation" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconLocations">
+      <EntityTypeMapping TypeName="Model.BeaconLocation">
+        <MappingFragment StoreEntitySet="BeaconLocation">
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconPermissions">
+      <EntityTypeMapping TypeName="Model.BeaconPermission">
+        <MappingFragment StoreEntitySet="BeaconPermissions">
+          <ScalarProperty Name="MasterTableId" ColumnName="MasterTableId" />
+          <ScalarProperty Name="isMasterTable" ColumnName="isMasterTable" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Permission_Display" ColumnName="Permission_Display" />
+          <ScalarProperty Name="Permissions_Desc" ColumnName="Permissions_Desc" />
+          <ScalarProperty Name="PermissionsId" ColumnName="PermissionsId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconUserDetails">
+      <EntityTypeMapping TypeName="Model.BeaconUserDetail">
+        <MappingFragment StoreEntitySet="BeaconUserDetails">
+          <ScalarProperty Name="QueryStringFlag" ColumnName="QueryStringFlag" />
+          <ScalarProperty Name="PreferedLocation" ColumnName="PreferedLocation" />
+          <ScalarProperty Name="SpecialTags" ColumnName="SpecialTags" />
+          <ScalarProperty Name="JobHops" ColumnName="JobHops" />
+          <ScalarProperty Name="PreviousExperience" ColumnName="PreviousExperience" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="HomeTown" ColumnName="HomeTown" />
+          <ScalarProperty Name="PermanentAddress" ColumnName="PermanentAddress" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="BeaconId" ColumnName="BeaconId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconUserEducationDetails">
+      <EntityTypeMapping TypeName="Model.BeaconUserEducationDetail">
+        <MappingFragment StoreEntitySet="BeaconUserEducationDetails">
+          <ScalarProperty Name="Degree" ColumnName="Degree" />
+          <ScalarProperty Name="CountryOfStudy" ColumnName="CountryOfStudy" />
+          <ScalarProperty Name="College" ColumnName="College" />
+          <ScalarProperty Name="Specialization" ColumnName="Specialization" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="YearOfCompletion" ColumnName="YearOfCompletion" />
+          <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+          <ScalarProperty Name="Standard" ColumnName="Standard" />
+          <ScalarProperty Name="BeaconId" ColumnName="BeaconId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconUserStatus">
+      <EntityTypeMapping TypeName="Model.BeaconUserStatu">
+        <MappingFragment StoreEntitySet="BeaconUserStatus">
+          <ScalarProperty Name="DateOfRegistration" ColumnName="DateOfRegistration" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="SourceOfRecruitment" ColumnName="SourceOfRecruitment" />
+          <ScalarProperty Name="ReferredBy" ColumnName="ReferredBy" />
+          <ScalarProperty Name="ExpectedDateOfJoining" ColumnName="ExpectedDateOfJoining" />
+          <ScalarProperty Name="AllocatedLocation" ColumnName="AllocatedLocation" />
+          <ScalarProperty Name="OfferLetterStatus" ColumnName="OfferLetterStatus" />
+          <ScalarProperty Name="CandidateStatus" ColumnName="CandidateStatus" />
+          <ScalarProperty Name="BeaconId" ColumnName="BeaconId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconUserWorkExperiences">
+      <EntityTypeMapping TypeName="Model.BeaconUserWorkExperience">
+        <MappingFragment StoreEntitySet="BeaconUserWorkExperience">
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="DateTo" ColumnName="DateTo" />
+          <ScalarProperty Name="DateFrom" ColumnName="DateFrom" />
+          <ScalarProperty Name="IsCurrentPosition" ColumnName="IsCurrentPosition" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="BeaconId" ColumnName="BeaconId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="Model.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Roles_Desc" ColumnName="Roles_Desc" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles_Department_Mapping">
+      <EntityTypeMapping TypeName="Model.Roles_Department_Mapping">
+        <MappingFragment StoreEntitySet="Roles_Department_Mapping">
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles_Locations_Mapping">
+      <EntityTypeMapping TypeName="Model.Roles_Locations_Mapping">
+        <MappingFragment StoreEntitySet="Roles_Locations_Mapping">
+          <ScalarProperty Name="SubLocation" ColumnName="SubLocation" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles_Permissions_Mapping">
+      <EntityTypeMapping TypeName="Model.Roles_Permissions_Mapping">
+        <MappingFragment StoreEntitySet="Roles_Permissions_Mapping">
+          <ScalarProperty Name="PermissionsId" ColumnName="PermissionsId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="Model.UserRole">
+        <MappingFragment StoreEntitySet="UserRoles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconCandidateStatusLists">
+      <EntityTypeMapping TypeName="Model.BeaconCandidateStatusList">
+        <MappingFragment StoreEntitySet="BeaconCandidateStatusList">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="StausID" ColumnName="StausID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconGPHRLocationMappings">
+      <EntityTypeMapping TypeName="Model.BeaconGPHRLocationMapping">
+        <MappingFragment StoreEntitySet="BeaconGPHRLocationMapping">
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="HRName" ColumnName="HRName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconHROMs">
+      <EntityTypeMapping TypeName="Model.BeaconHROM">
+        <MappingFragment StoreEntitySet="BeaconHROM">
+          <ScalarProperty Name="HROM" ColumnName="HROM" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconOfferLetterStatus">
+      <EntityTypeMapping TypeName="Model.BeaconOfferLetterStatu">
+        <MappingFragment StoreEntitySet="BeaconOfferLetterStatus">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconSourceOfRecruitments">
+      <EntityTypeMapping TypeName="Model.BeaconSourceOfRecruitment">
+        <MappingFragment StoreEntitySet="BeaconSourceOfRecruitment">
+          <ScalarProperty Name="SourceOfRecruitment" ColumnName="SourceOfRecruitment" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconUserVacancyAdditionalInfoes">
+      <EntityTypeMapping TypeName="Model.BeaconUserVacancyAdditionalInfo">
+        <MappingFragment StoreEntitySet="BeaconUserVacancyAdditionalInfo">
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="CriminalCharge" ColumnName="CriminalCharge" />
+          <ScalarProperty Name="CountryEligibility" ColumnName="CountryEligibility" />
+          <ScalarProperty Name="AppStatusId" ColumnName="AppStatusId" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="AnswerKillerQ3" ColumnName="AnswerKillerQ3" />
+          <ScalarProperty Name="KillerQ3" ColumnName="KillerQ3" />
+          <ScalarProperty Name="AnswerKillerQ2" ColumnName="AnswerKillerQ2" />
+          <ScalarProperty Name="KillerQ2" ColumnName="KillerQ2" />
+          <ScalarProperty Name="AnswerKillerQ1" ColumnName="AnswerKillerQ1" />
+          <ScalarProperty Name="KillerQ1" ColumnName="KillerQ1" />
+          <ScalarProperty Name="AnswerSelectionQ3" ColumnName="AnswerSelectionQ3" />
+          <ScalarProperty Name="SelectionQ3" ColumnName="SelectionQ3" />
+          <ScalarProperty Name="AnswerSelectionQ2" ColumnName="AnswerSelectionQ2" />
+          <ScalarProperty Name="SelectionQ2" ColumnName="SelectionQ2" />
+          <ScalarProperty Name="AnswerSelectionQ1" ColumnName="AnswerSelectionQ1" />
+          <ScalarProperty Name="SelectionQ1" ColumnName="SelectionQ1" />
+          <ScalarProperty Name="VacancyID" ColumnName="VacancyID" />
+          <ScalarProperty Name="BeaconID" ColumnName="BeaconID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconVacancies">
+      <EntityTypeMapping TypeName="Model.BeaconVacancy">
+        <MappingFragment StoreEntitySet="BeaconVacancy">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+          <ScalarProperty Name="VacancyRole" ColumnName="VacancyRole" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="VacancyDescription" ColumnName="VacancyDescription" />
+          <ScalarProperty Name="VacancyTitle" ColumnName="VacancyTitle" />
+          <ScalarProperty Name="VacancyStatus" ColumnName="VacancyStatus" />
+          <ScalarProperty Name="ClosingDate" ColumnName="ClosingDate" />
+          <ScalarProperty Name="OpeningDate" ColumnName="OpeningDate" />
+          <ScalarProperty Name="VacancyID" ColumnName="VacancyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeaconVacancyInfoSources">
+      <EntityTypeMapping TypeName="Model.BeaconVacancyInfoSource">
+        <MappingFragment StoreEntitySet="BeaconVacancyInfoSource">
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="SourceID" ColumnName="SourceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompleteResultSets">
+      <EntityTypeMapping TypeName="Model.CompleteResultSet">
+        <MappingFragment StoreEntitySet="CompleteResultSet">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="TestLabel" ColumnName="TestLabel" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Response" ColumnName="Response" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="CompletionStatus" ColumnName="CompletionStatus" />
+          <ScalarProperty Name="NumOfAttempt" ColumnName="NumOfAttempt" />
+          <ScalarProperty Name="QTIKey" ColumnName="QTIKey" />
+          <ScalarProperty Name="TestAuthor" ColumnName="TestAuthor" />
+          <ScalarProperty Name="TestId" ColumnName="TestId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompleteResultSetArchives">
+      <EntityTypeMapping TypeName="Model.CompleteResultSetArchive">
+        <MappingFragment StoreEntitySet="CompleteResultSetArchive">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="TestLabel" ColumnName="TestLabel" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Response" ColumnName="Response" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="CompletionStatus" ColumnName="CompletionStatus" />
+          <ScalarProperty Name="NumOfAttempt" ColumnName="NumOfAttempt" />
+          <ScalarProperty Name="QTIKey" ColumnName="QTIKey" />
+          <ScalarProperty Name="TestAuthor" ColumnName="TestAuthor" />
+          <ScalarProperty Name="TestId" ColumnName="TestId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TAOMasterDatas">
+      <EntityTypeMapping TypeName="Model.TAOMasterData">
+        <MappingFragment StoreEntitySet="TAOMasterData">
+          <ScalarProperty Name="TimeLimits" ColumnName="TimeLimits" />
+          <ScalarProperty Name="HighLevel" ColumnName="HighLevel" />
+          <ScalarProperty Name="LowLevel" ColumnName="LowLevel" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="aspnet_UsersInRoles" TypeName="Model.aspnet_UsersInRoles" StoreEntitySet="aspnet_UsersInRoles">
+      <EndProperty Name="aspnet_Users">
+        <ScalarProperty Name="UserId" ColumnName="UserId" />
+      </EndProperty>
+      <EndProperty Name="aspnet_Roles">
+        <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
